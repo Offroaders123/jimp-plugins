@@ -28,7 +28,7 @@ declare module "tga" {
         bytesPerPixel: number;
         pixels: Uint8Array;
         constructor(buffer: Buffer, opt?: Options);
-        static createTgaBuffer(width: number, height: number, pixels: number[], dontFlipY?: boolean): Buffer;
+        static createTgaBuffer(width: number, height: number, pixels: Buffer, dontFlipY?: boolean): Buffer;
         static getHeader(buffer: Buffer): Omit<Header, "bytesPerPixel"> & {
             bytesPerPixel?: number | undefined;
         };
