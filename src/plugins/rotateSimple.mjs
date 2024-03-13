@@ -1,3 +1,11 @@
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
+
+/**
+ * @this {JimpPlugins}
+ * @param {number} deg
+ */
 function rotateSimple(deg) {
     // Restore simple rotate of jimp v0.5.6
     // https://github.com/oliver-moran/jimp/issues/821
@@ -38,6 +46,11 @@ function rotateSimple(deg) {
 
     return this;
 
+    /**
+     * @param {import("@jimp/core").Bitmap} bitmap
+     * @param {Buffer} dstBuffer
+     * @param {boolean} clockwise
+     */
     function rotate90degrees(bitmap, dstBuffer, clockwise) {
         const dstOffsetStep = clockwise ? -4 : 4;
         let dstOffset = clockwise ? dstBuffer.length - 4 : 0;

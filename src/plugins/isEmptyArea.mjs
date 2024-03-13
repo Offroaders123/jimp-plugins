@@ -1,3 +1,14 @@
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
+
+/**
+ * @this {JimpPlugins}
+ * @param {number} x
+ * @param {number} y
+ * @param {number} width
+ * @param {number} height
+ */
 function isEmptyArea(x, y, width, height) {
     let is_empty = true;
 

@@ -11,7 +11,7 @@ import rotateSimple from "./plugins/rotateSimple.mjs";
 import tga from "./types/tga.mjs";
 import toRectangles from "./plugins/toRectangles.mjs";
 
-configure({
+const JimpPlugins = configure({
     plugins: [
         autoCropTransparent,
         borderImage,
@@ -28,4 +28,4 @@ configure({
     ]
 }, Jimp);
 
-export default Jimp;
+export default JimpPlugins;

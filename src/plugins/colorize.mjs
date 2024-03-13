@@ -1,3 +1,11 @@
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
+
+/**
+ * @this {JimpPlugins}
+ * @param {string} color
+ */
 function colorize(color) {
     if (!Array.isArray(color) || color.length < 3) {
         return this;

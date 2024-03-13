@@ -1,3 +1,10 @@
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
+
+/**
+ * @this {JimpPlugins}
+*/
 function toRectangles() {
     const rectangles = [];
 
@@ -44,6 +51,9 @@ function toRectangles() {
     return rectangles;
 }
 
+/**
+ * @this {JimpPlugins}
+*/
 function toRectanglesSvg() {
     const rectangles = toRectangles.call(this);
 
@@ -54,13 +64,22 @@ ${rectangles.map(rectangle => `    <rect ${hexColor(rectangle.color)} height="${
 </svg>`;
 }
 
+/**
+ * @param {number[]} color
+ */
 function hexColor(color) {
     return `fill="#${decToHex(color[0])}${decToHex(color[1])}${decToHex(color[2])}"${color[3] < 255 ? ` fill-opacity="${decToOpacity(color[3])}"` : ``}`
 
+    /**
+     * @param {number} dec
+     */
     function decToHex(dec) {
         return dec.toString(16).padStart(2, "0").toUpperCase();
     }
 
+    /**
+     * @param {number} dec
+     */
     function decToOpacity(dec) {
         return (dec / 255);
     }

@@ -1,3 +1,15 @@
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
+
+/**
+ * @this {JimpPlugins}
+ * @param {number} x
+ * @param {number} y
+ * @param {number} width
+ * @param {number} height
+ * @param {[number, number, number, number?]} color
+ */
 function fillArea(x, y, width, height, color) {
     if (!Array.isArray(color) || color.length < 3) {
         return this;
