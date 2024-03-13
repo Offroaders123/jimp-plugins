@@ -16,5 +16,8 @@
     "allowUnreachableCode": false,
     "noUnusedLocals": true,
     // "noUnusedParameters": true
-  }
+  },
+  "exclude": [
+    "bin"
+  ]
 }
