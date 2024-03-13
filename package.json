@@ -22,7 +22,9 @@
     "jimp": "0.9.8",
     "tga": "1.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.11.26"
+  },
   "engines": {
     "node": ">=14.0.0"
   },
