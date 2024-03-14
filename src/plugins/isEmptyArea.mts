@@ -1,15 +1,6 @@
-/**
- * @typedef {import("../index.mjs").default} JimpPlugins
-*/
+import type { JimpPlugins } from "../index.mjs";
 
-/**
- * @this {JimpPlugins}
- * @param {number} x
- * @param {number} y
- * @param {number} width
- * @param {number} height
- */
-function isEmptyArea(x, y, width, height) {
+function isEmptyArea(this: JimpPlugins, x: number, y: number, width: number, height: number) {
     let is_empty = true;
 
     const clone = this.clone().crop(x, y, width, height).autoCropTransparent();

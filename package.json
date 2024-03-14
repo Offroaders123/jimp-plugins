@@ -28,7 +28,8 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "main": "src/index.mjs",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.mts",
   "bin": {
     "img_to_svg": "bin/img_to_svg.mjs"
   }

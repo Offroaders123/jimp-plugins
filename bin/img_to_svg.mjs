@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import Jimp from "../src/index.mjs";
+import Jimp from "../dist/index.mjs";
 import {writeFile} from "fs/promises";
 
 (async () => {

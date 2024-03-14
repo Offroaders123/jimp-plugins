@@ -1,14 +1,8 @@
 import Jimp from "jimp";
 
-/**
- * @typedef {import("../index.mjs").default} JimpPlugins
-*/
+import type { JimpPlugins } from "../index.mjs";
 
-/**
- * @this {JimpPlugins}
- * @param {number} max_height
- */
-function ensureMaxHeight(max_height) {
+function ensureMaxHeight(this: JimpPlugins, max_height: number): JimpPlugins {
     if (this.getHeight() > max_height) {
         scaleToHeight(this, max_height);
     }
@@ -16,11 +10,7 @@ function ensureMaxHeight(max_height) {
     return this;
 }
 
-/**
- * @this {JimpPlugins}
- * @param {number} max_width
- */
-function ensureMaxWidth(max_width) {
+function ensureMaxWidth(this: JimpPlugins, max_width: number): JimpPlugins {
     if (this.getWidth() > max_width) {
         scaleToWidth(this, max_width);
     }
@@ -28,11 +18,7 @@ function ensureMaxWidth(max_width) {
     return this;
 }
 
-/**
- * @this {JimpPlugins}
- * @param {number} min_height
- */
-function ensureMinHeight(min_height) {
+function ensureMinHeight(this: JimpPlugins, min_height: number): JimpPlugins {
     if (this.getHeight() < min_height) {
         scaleToHeight(this, min_height);
     }
@@ -40,11 +26,7 @@ function ensureMinHeight(min_height) {
     return this;
 }
 
-/**
- * @this {JimpPlugins}
- * @param {number} min_width
- */
-function ensureMinWidth(min_width) {
+function ensureMinWidth(this: JimpPlugins, min_width: number): JimpPlugins {
     if (this.getWidth() < min_width) {
         scaleToWidth(this, min_width);
     }
@@ -52,28 +34,15 @@ function ensureMinWidth(min_width) {
     return this;
 }
 
-/**
- * @param {JimpPlugins} image
- * @param {number} height
- */
-function scaleToHeight(image, height) {
+function scaleToHeight(image: JimpPlugins, height: number): void {
     scale(image, height, image.getHeight());
 }
 
-/**
- * @param {JimpPlugins} image
- * @param {number} width
- */
-function scaleToWidth(image, width) {
+function scaleToWidth(image: JimpPlugins, width: number): void {
     scale(image, width, image.getWidth());
 }
 
-/**
- * @param {JimpPlugins} image
- * @param {number} new_size
- * @param {number} current_size
- */
-function scale(image, new_size, current_size) {
+function scale(image: JimpPlugins, new_size: number, current_size: number): void {
     image.scale((new_size / current_size), Jimp.RESIZE_NEAREST_NEIGHBOR);
 }
 

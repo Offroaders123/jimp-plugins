@@ -1,16 +1,6 @@
-/**
- * @typedef {import("../index.mjs").default} JimpPlugins
-*/
+import type { JimpPlugins } from "../index.mjs";
 
-/**
- * @this {JimpPlugins}
- * @param {number} x
- * @param {number} y
- * @param {number} width
- * @param {number} height
- * @param {number[]} color
- */
-function checkAreaIsSameColor(x, y, width, height, color) {
+function checkAreaIsSameColor(this: JimpPlugins, x: number, y: number, width: number, height: number, color: number[]): boolean {
     for (const {idx: idx2} of this.scanIterator(x, y, width, height)) {
         if (!(
             this.bitmap.data[idx2] === color[0]

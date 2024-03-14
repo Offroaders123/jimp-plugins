@@ -1,12 +1,6 @@
-/**
- * @typedef {import("../index.mjs").default} JimpPlugins
-*/
+import type { JimpPlugins } from "../index.mjs";
 
-/**
- * @this {JimpPlugins}
- * @returns {JimpPlugins}
-*/
-function autoCropTransparent() {
+function autoCropTransparent(this: JimpPlugins): JimpPlugins {
     if (this.getWidth() < 2 || this.getHeight() < 2) {
         return this;
     }
@@ -49,13 +43,7 @@ function autoCropTransparent() {
 
     return this;
 
-    /**
-     * @this {JimpPlugins}
-     * @param {number} x
-     * @param {number} y
-     * @param {number} idx
-     */
-    function checkHasOnlyAlpha(x, y, idx) {
+    function checkHasOnlyAlpha(this: JimpPlugins, x: number, y: number, idx: number) {
         if (!hasOnlyAlpha) {
             return;
         }
