@@ -29,7 +29,7 @@ configure({
 }, Jimp);
 
 /**
- * @typedef {Jimp & ReturnType<typeof autoCropTransparent> & ReturnType<typeof borderImage> & ReturnType<typeof checkAreaIsSameColor> & ReturnType<typeof colorize> & ReturnType<typeof ensureSize> & ReturnType<typeof fillArea> & ReturnType<typeof isEmptyArea> & ReturnType<typeof rotateSimple> & ReturnType<typeof toRectangles>} JimpPlugins
+ * @typedef {Jimp & ReturnType<typeof autoCropTransparent> & ReturnType<typeof borderImage> & ReturnType<typeof checkAreaIsSameColor> & ReturnType<typeof colorize> & ReturnType<typeof ensureSize> & ReturnType<typeof fillArea> & ReturnType<typeof isEmptyArea> & ReturnType<typeof rotateSimple> & ReturnType<typeof toRectangles> & { MIME_TGA: string; }} JimpPlugins
 */
 
 export default /** @type {JimpPlugins} */ (Jimp);
