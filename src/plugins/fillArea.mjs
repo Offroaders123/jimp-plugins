@@ -9,6 +9,7 @@
  * @param {number} width
  * @param {number} height
  * @param {[number, number, number, number?]} color
+ * @returns {JimpPlugins}
  */
 function fillArea(x, y, width, height, color) {
     if (!Array.isArray(color) || color.length < 3) {

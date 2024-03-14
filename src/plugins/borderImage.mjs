@@ -12,9 +12,10 @@ import Jimp from "jimp";
  * @param {number} border_bottom
  * @param {number} new_width
  * @param {number} new_height
+ * @returns {Promise<JimpPlugins>}
  */
 async function borderImage(border_left, border_top, border_right, border_bottom, new_width, new_height) {
-    const new_image = await Jimp.create(new_width, new_height);
+    const new_image = /** @type {JimpPlugins} */ (await Jimp.create(new_width, new_height));
 
     new_image.composite(this.clone().crop(0, 0, border_left, border_top), 0, 0);
     new_image.composite(this.clone().crop(border_left, 0, (this.getWidth() - border_left - border_right), border_top).resize((new_width - border_left - border_right), border_top, Jimp.RESIZE_NEAREST_NEIGHBOR), border_left, 0);

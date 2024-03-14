@@ -5,6 +5,7 @@
 /**
  * @this {JimpPlugins}
  * @param {string} color
+ * @returns {JimpPlugins}
  */
 function colorize(color) {
     if (!Array.isArray(color) || color.length < 3) {

@@ -9,6 +9,7 @@
  * @param {number} width
  * @param {number} height
  * @param {number[]} color
+ * @returns {boolean}
  */
 function checkAreaIsSameColor(x, y, width, height, color) {
     for (const {idx: idx2} of this.scanIterator(x, y, width, height)) {

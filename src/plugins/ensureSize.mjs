@@ -7,6 +7,7 @@ import Jimp from "jimp";
 /**
  * @this {JimpPlugins}
  * @param {number} max_height
+ * @returns {JimpPlugins}
  */
 function ensureMaxHeight(max_height) {
     if (this.getHeight() > max_height) {
@@ -19,6 +20,7 @@ function ensureMaxHeight(max_height) {
 /**
  * @this {JimpPlugins}
  * @param {number} max_width
+ * @returns {JimpPlugins}
  */
 function ensureMaxWidth(max_width) {
     if (this.getWidth() > max_width) {
@@ -31,6 +33,7 @@ function ensureMaxWidth(max_width) {
 /**
  * @this {JimpPlugins}
  * @param {number} min_height
+ * @returns {JimpPlugins}
  */
 function ensureMinHeight(min_height) {
     if (this.getHeight() < min_height) {
@@ -43,6 +46,7 @@ function ensureMinHeight(min_height) {
 /**
  * @this {JimpPlugins}
  * @param {number} min_width
+ * @returns {JimpPlugins}
  */
 function ensureMinWidth(min_width) {
     if (this.getWidth() < min_width) {
@@ -55,6 +59,7 @@ function ensureMinWidth(min_width) {
 /**
  * @param {JimpPlugins} image
  * @param {number} height
+ * @returns {void}
  */
 function scaleToHeight(image, height) {
     scale(image, height, image.getHeight());
@@ -63,6 +68,7 @@ function scaleToHeight(image, height) {
 /**
  * @param {JimpPlugins} image
  * @param {number} width
+ * @returns {void}
  */
 function scaleToWidth(image, width) {
     scale(image, width, image.getWidth());
@@ -72,6 +78,7 @@ function scaleToWidth(image, width) {
  * @param {JimpPlugins} image
  * @param {number} new_size
  * @param {number} current_size
+ * @returns {void}
  */
 function scale(image, new_size, current_size) {
     image.scale((new_size / current_size), Jimp.RESIZE_NEAREST_NEIGHBOR);

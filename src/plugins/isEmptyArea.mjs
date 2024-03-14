@@ -8,6 +8,7 @@
  * @param {number} y
  * @param {number} width
  * @param {number} height
+ * @returns {boolean}
  */
 function isEmptyArea(x, y, width, height) {
     let is_empty = true;

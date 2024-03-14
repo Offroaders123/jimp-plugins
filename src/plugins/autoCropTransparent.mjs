@@ -54,6 +54,7 @@ function autoCropTransparent() {
      * @param {number} x
      * @param {number} y
      * @param {number} idx
+     * @returns {void}
      */
     function checkHasOnlyAlpha(x, y, idx) {
         if (!hasOnlyAlpha) {

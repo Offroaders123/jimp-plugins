@@ -5,6 +5,7 @@
 /**
  * @this {JimpPlugins}
  * @param {number} deg
+ * @returns {JimpPlugins}
  */
 function rotateSimple(deg) {
     // Restore simple rotate of jimp v0.5.6
@@ -50,6 +51,7 @@ function rotateSimple(deg) {
      * @param {import("@jimp/core").Bitmap} bitmap
      * @param {Buffer} dstBuffer
      * @param {boolean} clockwise
+     * @returns {void}
      */
     function rotate90degrees(bitmap, dstBuffer, clockwise) {
         const dstOffsetStep = clockwise ? -4 : 4;

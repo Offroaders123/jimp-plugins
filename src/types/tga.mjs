@@ -5,7 +5,16 @@ const FILE_EXTENSION = "tga";
 const MIME_TYPE = "image/x-tga";
 
 /**
+ * @typedef DecodedTGA
+ * 
+ * @property {Uint8Array} data
+ * @property {number} width
+ * @property {number} height
+*/
+
+/**
  * @param {Jimp} image
+ * @returns {Buffer}
  */
 function encode(image) {
     const buffer = TGA.createTgaBuffer(image.getWidth(), image.getHeight(), image.bitmap.data);
@@ -15,6 +24,7 @@ function encode(image) {
 
 /**
  * @param {Buffer} buffer
+ * @returns {DecodedTGA}
  */
 function decode(buffer) {
     const tga = new TGA(buffer);
