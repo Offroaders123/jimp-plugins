@@ -1,6 +1,16 @@
-import type { JimpPlugins } from "../index.mjs";
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
 
-function fillArea(this: JimpPlugins, x: number, y: number, width: number, height: number, color: [number, number, number, number?]): JimpPlugins {
+/**
+ * @this {JimpPlugins}
+ * @param {number} x
+ * @param {number} y
+ * @param {number} width
+ * @param {number} height
+ * @param {[number, number, number, number?]} color
+ */
+function fillArea(x, y, width, height, color) {
     if (!Array.isArray(color) || color.length < 3) {
         return this;
     }

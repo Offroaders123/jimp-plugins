@@ -28,6 +28,4 @@ const JimpPlugins = configure({
     ]
 }, Jimp);
 
-export type JimpPlugins = typeof JimpPlugins;
-
-export default Jimp as JimpPlugins;
+export default JimpPlugins;

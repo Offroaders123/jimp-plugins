@@ -1,6 +1,12 @@
-import type { JimpPlugins } from "../index.mjs";
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
 
-function colorize(this: JimpPlugins, color: string): JimpPlugins {
+/**
+ * @this {JimpPlugins}
+ * @param {string} color
+ */
+function colorize(color) {
     if (!Array.isArray(color) || color.length < 3) {
         return this;
     }

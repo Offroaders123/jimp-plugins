@@ -1,8 +1,19 @@
 import Jimp from "jimp";
 
-import type { JimpPlugins } from "../index.mjs";
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
 
-async function borderImage(this: JimpPlugins, border_left: number, border_top: number, border_right: number, border_bottom: number, new_width: number, new_height: number) {
+/**
+ * @this {JimpPlugins}
+ * @param {number} border_left
+ * @param {number} border_top
+ * @param {number} border_right
+ * @param {number} border_bottom
+ * @param {number} new_width
+ * @param {number} new_height
+ */
+async function borderImage(border_left, border_top, border_right, border_bottom, new_width, new_height) {
     const new_image = await Jimp.create(new_width, new_height);
 
     new_image.composite(this.clone().crop(0, 0, border_left, border_top), 0, 0);

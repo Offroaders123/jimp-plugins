@@ -1,15 +1,12 @@
-import type { JimpPlugins } from "../index.mjs";
+/**
+ * @typedef {import("../index.mjs").default} JimpPlugins
+*/
 
-export interface Rectangle {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    color: number[];
-}
-
-function toRectangles(this: JimpPlugins): Rectangle[] {
-    const rectangles: Rectangle[] = [];
+/**
+ * @this {JimpPlugins}
+*/
+function toRectangles() {
+    const rectangles = [];
 
     const clone = this.clone();
 
@@ -54,7 +51,10 @@ function toRectangles(this: JimpPlugins): Rectangle[] {
     return rectangles;
 }
 
-function toRectanglesSvg(this: JimpPlugins): string {
+/**
+ * @this {JimpPlugins}
+*/
+function toRectanglesSvg() {
     const rectangles = toRectangles.call(this);
 
     return `<?xml version="1.0" encoding="UTF-8" ?>
@@ -64,14 +64,23 @@ ${rectangles.map(rectangle => `    <rect ${hexColor(rectangle.color)} height="${
 </svg>`;
 }
 
-function hexColor(color: number[]): string {
+/**
+ * @param {number[]} color
+ */
+function hexColor(color) {
     return `fill="#${decToHex(color[0])}${decToHex(color[1])}${decToHex(color[2])}"${color[3] < 255 ? ` fill-opacity="${decToOpacity(color[3])}"` : ``}`
 
-    function decToHex(dec: number): string {
+    /**
+     * @param {number} dec
+     */
+    function decToHex(dec) {
         return dec.toString(16).padStart(2, "0").toUpperCase();
     }
 
-    function decToOpacity(dec: number): number {
+    /**
+     * @param {number} dec
+     */
+    function decToOpacity(dec) {
         return (dec / 255);
     }
 }

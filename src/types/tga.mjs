@@ -1,23 +1,22 @@
 import TGA from "tga";
-
-import type Jimp from "jimp";
+import Jimp from "jimp";
 
 const FILE_EXTENSION = "tga";
 const MIME_TYPE = "image/x-tga";
 
-function encode(image: Jimp): Buffer {
+/**
+ * @param {Jimp} image
+ */
+function encode(image) {
     const buffer = TGA.createTgaBuffer(image.getWidth(), image.getHeight(), image.bitmap.data);
 
     return buffer;
 }
 
-export interface DecodedTGA {
-    data: Uint8Array;
-    height: number;
-    width: number;
-}
-
-function decode(buffer: Buffer): DecodedTGA {
+/**
+ * @param {Buffer} buffer
+ */
+function decode(buffer) {
     const tga = new TGA(buffer);
 
     return {
