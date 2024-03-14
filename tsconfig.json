@@ -2,13 +2,14 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "rootDir": "./src",
+    "rootDir": "./",
     "outDir": "./types",
     "module": "NodeNext",
     "target": "ESNext",
     "isolatedModules": true,
     "declaration": true,
     "emitDeclarationOnly": true,
+    "removeComments": true,
     "strict": true,
     // "noImplicitOverride": true,
     // "noPropertyAccessFromIndexSignature": true,
@@ -18,6 +19,7 @@
     // "noUnusedParameters": true
   },
   "exclude": [
+    "types",
     "bin"
   ]
 }

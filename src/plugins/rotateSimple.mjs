@@ -1,5 +1,5 @@
 /**
- * @typedef {import("../index.mjs").default} JimpPlugins
+ * @typedef {import("../index.mjs").JimpPlugins} JimpPlugins
 */
 
 /**
